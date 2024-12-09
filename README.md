@@ -5,7 +5,6 @@ Nx monorepo set up for hardhat and nextjs app
 ## Installation
 
 ```bash
-
 # Add nx lib
 yarn add nx@latest -D
 # Node - create project and move code from temp-hardhat
