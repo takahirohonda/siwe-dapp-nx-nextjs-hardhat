@@ -8,8 +8,8 @@ Nx monorepo set up for hardhat and nextjs app
 # Add nx lib
 yarn add nx@latest -D
 # Node - create project and move code from temp-hardhat
-yarn nx add @nx/node
-yarn nx g @nx/node:application apps/my-new-app
+yarn nx add @nx/node -D
+yarn nx g @nx/node:application apps/hardhat
 
 
 # Do this in a different folder...
