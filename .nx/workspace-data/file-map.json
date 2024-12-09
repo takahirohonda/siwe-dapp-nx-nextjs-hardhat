@@ -1,0 +1,31 @@
+{
+  "version": "6.0",
+  "nxVersion": "20.2.1",
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {},
+    "nonProjectFiles": [
+      {
+        "file": ".gitignore",
+        "hash": "3009140142791806673"
+      },
+      {
+        "file": "LICENSE",
+        "hash": "18270907642229187975"
+      },
+      {
+        "file": "README.md",
+        "hash": "9004803437363400424"
+      },
+      {
+        "file": "package.json",
+        "hash": "78396839974619302"
+      },
+      {
+        "file": "yarn.lock",
+        "hash": "6030175746688998978"
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "nx-dapp-setup-for-hardhat-nextjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:takahirohonda/nx-dapp-setup-for-hardhat-nextjs.git",
+  "author": "takahirohonda <thon6thon6@hotmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@nx/next": "20.2.1",
+    "@nx/node": "20.2.1",
+    "nx": "^20.2.1"
+  }
+}
