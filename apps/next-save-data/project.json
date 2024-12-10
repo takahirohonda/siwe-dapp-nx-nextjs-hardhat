@@ -1,9 +1,0 @@
-{
-  "name": "next-save-data",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/next-save-data",
-  "projectType": "application",
-  "tags": [],
-  "// targets": "to see all targets run: nx show project next-save-data --web",
-  "targets": {}
-}

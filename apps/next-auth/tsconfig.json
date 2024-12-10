@@ -33,8 +33,8 @@
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx",
-    "../../apps/next-save-data/.next/types/**/*.ts",
-    "../../dist/apps/next-save-data/.next/types/**/*.ts",
+    "../../apps/next-auth/.next/types/**/*.ts",
+    "../../dist/apps/next-auth/.next/types/**/*.ts",
     "next-env.d.ts",
     ".next/types/**/*.ts"
   ],
