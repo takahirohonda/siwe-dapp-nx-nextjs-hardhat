@@ -2,7 +2,11 @@
 
 Nx monorepo set up for hardhat and nextjs app
 
-## Installation
+## Current to do + reference
+
+https://docs.login.xyz/sign-in-with-ethereum/quickstart-guide/creating-siwe-messages
+
+## (1) Setting up this repo.
 
 ```bash
 yarn add hardhat -D
@@ -25,6 +29,8 @@ yarn nx add @nx/next:lib
 yarn nx g @nx/next:lib libs/my-next-lib
 ```
 
-## more notes
+## (2) Setting up Wagmi
 
-https://docs.login.xyz/sign-in-with-ethereum/quickstart-guide/creating-siwe-messages
+```bash
+
+```
