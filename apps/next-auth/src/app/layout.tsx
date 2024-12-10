@@ -1,4 +1,5 @@
 import './global.css'
+import { NextUIProviderWrapper } from './NextUiProviderWrapper'
 
 export const metadata = {
   title: 'Welcome to next-auth',
@@ -12,7 +13,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <NextUIProviderWrapper>
+          <div className="container">
+            <main>{children}</main>
+          </div>
+        </NextUIProviderWrapper>
+      </body>
     </html>
   )
 }

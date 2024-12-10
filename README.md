@@ -32,5 +32,8 @@ yarn nx g @nx/next:lib libs/my-next-lib
 ## (2) Setting up Wagmi
 
 ```bash
+yarn add wagmi viem@2.x @tanstack/react-query
 
+# https://nextui.org/docs/guide/installation
+yarn @nextui-org/react framer-motion
 ```
