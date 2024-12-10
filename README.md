@@ -19,7 +19,7 @@ yarn nx g @nx/node:application apps/hardhat
 
 # Next js
 yarn nx add @nx/next
-yarn nx g @nx/next:app apps/next-app
+yarn nx g @nx/next:app apps/next-auth
 # Add lib for next
 yarn nx add @nx/next:lib
 yarn nx g @nx/next:lib libs/my-next-lib
