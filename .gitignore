@@ -154,3 +154,4 @@ ignition/deployments/chain-31337
 
 .nx/cache
 .nx/workspace-data
+vite.config.*.timestamp*
