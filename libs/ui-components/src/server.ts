@@ -1,2 +1,2 @@
 // Use this file to export React server components
-export * from './server-lib/hello-server'
+export * from './lib/hello-server'

@@ -1,7 +1,7 @@
 'use client'
 
 import { getAccount } from '@wagmi/core'
-import { config } from './config'
+import { config } from 'utils-wagmi'
 
 export const ConnectedNetwork = () => {
   const { chainId } = getAccount(config)

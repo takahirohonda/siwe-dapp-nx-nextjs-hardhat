@@ -7,7 +7,7 @@ export const WalletOptions = () => {
   const { connectors, connect } = useConnect()
 
   return (
-    <div className="flex gap-[24px]">
+    <div className="flex flex-col gap-[24px]">
       {connectors.map((connector) => (
         <Button
           key={connector.uid}

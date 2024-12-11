@@ -2,6 +2,7 @@ const { createGlobPatternsForDependencies } = require('@nx/react/tailwind')
 const { join } = require('path')
 const { nextui } = require('@nextui-org/react')
 const { THEME } = require('../../tailwind.config.common')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [

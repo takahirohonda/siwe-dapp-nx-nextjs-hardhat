@@ -26,6 +26,7 @@ yarn nx add @nx/next
 yarn nx g @nx/next:app apps/next-auth
 # Add react lib - need to configure tailwind and next ui because no option to add automatically with this command
 nx g @nx/next:library libs/utils-wagmi
+nx g @nx/next:library libs/ui-components
 ```
 
 ## (2) Setting up Wagmi
@@ -63,5 +64,3 @@ export const config = createConfig({
   },
 })
 ```
-
-"@nextui-org/react": "^2.6.5",

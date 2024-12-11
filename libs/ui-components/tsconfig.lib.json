@@ -21,12 +21,5 @@
     "src/**/*.spec.jsx",
     "src/**/*.test.jsx"
   ],
-  "include": [
-    "src/**/*.js",
-    "src/**/*.jsx",
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "../ui-components/src/lib/Modals/ConnectToWalletModal/ConnectToWalletModal.tsx",
-    "../ui-components/src/lib/Modals/ConnectToWalletModal/WalletOptions.tsx"
-  ]
+  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"]
 }
