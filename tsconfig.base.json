@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "utils-wagmi": ["libs/utils-wagmi/src/index.ts"],
+      "utils-wagmi/server": ["libs/utils-wagmi/src/server.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

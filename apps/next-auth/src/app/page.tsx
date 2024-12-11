@@ -1,10 +1,11 @@
 import { Button } from '@nextui-org/react'
+import { ConnectedWallet } from 'utils-wagmi'
 
 const HomePage = () => {
   return (
     <div>
       <div>Hello world</div>
-      <Button color="primary">Test Button</Button>
+      <ConnectedWallet />
     </div>
   )
 }
