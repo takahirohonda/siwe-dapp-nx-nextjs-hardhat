@@ -4,7 +4,7 @@ const HomePage = () => {
   return (
     <div>
       <p>Hello world</p>
-      <ConnectedWallet />
+      {/* <ConnectedWallet /> */}
     </div>
   )
 }

@@ -4,6 +4,7 @@ import clsx from 'clsx'
 import { useState } from 'react'
 import { MobileNavBurger } from './MobileNavBurger'
 import { PageLinks } from './Nav'
+import { ConnectToWallet } from '../ConnectToWallet/ConnectToWallet'
 
 export const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -38,7 +39,7 @@ export const MobileNav = () => {
           `)}
             >
               <PageLinks />
-              <button>Connect to wallet</button>
+              <ConnectToWallet />
             </div>
           </div>
         </div>

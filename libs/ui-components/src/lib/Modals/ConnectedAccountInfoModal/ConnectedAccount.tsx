@@ -8,14 +8,15 @@ export const ConnectedAccount = () => {
   const { address } = useAccount()
   const { disconnect } = useDisconnect()
   const { data: ensName } = useEnsName({ address })
-  const { data: ensAvatar } = useEnsAvatar({ name: ensName! })
+  const { data: ensAvatar } = useEnsAvatar({ name: ensName ?? '' })
 
   return (
     <div className="flex flex-col gap-[24px]">
       {ensAvatar && <img alt="ENS Avatar" src={ensAvatar} />}
       {address && (
         <div className="flex flex-col gap-[16px]">
-          <p>{ensName ? `${ensName} (${address})` : address}</p>
+          {ensName && <p>ENS Name: {ensName}</p>}
+          <p>Address: {address}</p>
           <ConnectedNetwork />
         </div>
       )}

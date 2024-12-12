@@ -22,17 +22,15 @@ export const ConnectedAccountInfoModal = ({
 }: ConnectToWalletModalProps) => {
   return (
     <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-      <ModalContent>
+      <ModalContent className="bg-slate-800">
         {(onClose) => (
           <>
-            <ModalHeader className="flex flex-col gap-[16px]">
+            <ModalHeader className="flex flex-col gap-[16px] text-white">
               Detected Wallets
             </ModalHeader>
             <ModalBody>
               <p>Connected Account Info</p>
               <ConnectedAccount />
-              <p>Connected Network Info</p>
-              <ConnectedNetwork />
             </ModalBody>
             <ModalFooter>
               <Button color="danger" variant="light" onPress={onClose}>

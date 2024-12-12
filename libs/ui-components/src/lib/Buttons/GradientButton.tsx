@@ -7,6 +7,7 @@ interface ButtonProps {
   children?: React.ReactNode
   size?: 'large' | 'medium'
   type?: 'button' | 'submit' | 'reset'
+  variant: 'primary' | 'secondary'
   onClick?: () => void
 }
 
@@ -21,11 +22,24 @@ const getButtonSizeStyle = (size: ButtonSize) => {
       return MEDIUM
   }
 }
+
+const getButtonVariantStyle = (variant: 'primary' | 'secondary') => {
+  switch (variant) {
+    case 'primary':
+      return 'primary-button-gradient'
+    case 'secondary':
+      return 'red-purple-button-gradient'
+    default:
+      return 'primary-button-gradient'
+  }
+}
+
 export const GradientButton = ({
   size = 'medium',
   onClick,
   children,
   type = 'button',
+  variant,
 }: ButtonProps) => {
   return (
     <button
@@ -38,6 +52,7 @@ export const GradientButton = ({
         hover:brightness-90
         primary-button-gradient
         `,
+        getButtonVariantStyle(variant),
         getButtonSizeStyle(size)
       )}
       onClick={onClick}
