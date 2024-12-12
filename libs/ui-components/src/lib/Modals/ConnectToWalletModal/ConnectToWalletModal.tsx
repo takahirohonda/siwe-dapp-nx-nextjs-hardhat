@@ -1,11 +1,13 @@
+'use client'
+
 import {
   Modal,
   ModalContent,
   ModalHeader,
   ModalBody,
   ModalFooter,
-  Button,
-} from '@nextui-org/react'
+} from '@nextui-org/modal'
+import { Button } from '@nextui-org/button'
 import { WalletOptions } from './WalletOptions'
 
 export interface ConnectToWalletModalProps {

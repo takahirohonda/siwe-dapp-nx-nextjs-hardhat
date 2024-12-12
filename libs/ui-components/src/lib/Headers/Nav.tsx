@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Button } from '@nextui-org/react'
+import { ConnectToWalletButton } from '../ConnectToWalletButton/ConnectToWalletButton'
 
 export const PageLinks = () => (
   <>
@@ -19,9 +20,7 @@ export const Nav = () => {
         <PageLinks />
       </div>
       <div className="flex gap-[24px] items-center">
-        <Button color="success" variant="solid">
-          Connect to Wallet
-        </Button>
+        <ConnectToWalletButton />
       </div>
     </>
   )

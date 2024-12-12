@@ -1,6 +1,8 @@
+'use client'
+
 import { useDisclosure } from '@nextui-org/react'
 import { GradientButton } from './GradientButton'
-import { ConnectToWalletModal } from '../Modals/ConnectedAccountInfoModal/ConnectedAccountInfoModal'
+import { ConnectToWalletModal } from '../Modals/ConnectToWalletModal/ConnectToWalletModal'
 
 export const ConnectToWalletButton = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
