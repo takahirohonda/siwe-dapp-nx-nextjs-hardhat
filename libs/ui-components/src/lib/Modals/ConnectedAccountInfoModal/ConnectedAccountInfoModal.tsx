@@ -1,3 +1,5 @@
+'use client'
+
 import {
   Modal,
   ModalContent,
@@ -6,7 +8,7 @@ import {
   ModalFooter,
   Button,
 } from '@nextui-org/react'
-import { WalletOptions } from './WalletOptions'
+
 import { ConnectedNetwork } from './ConnectedNetwork'
 import { ConnectedAccount } from './ConnectedAccount'
 

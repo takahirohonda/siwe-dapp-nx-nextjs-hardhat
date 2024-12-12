@@ -1,3 +1,5 @@
+'use client'
+
 import { useDisclosure } from '@nextui-org/react'
 import { GradientButton } from './GradientButton'
 import { ConnectToWalletModal } from '../Modals/ConnectedAccountInfoModal/ConnectedAccountInfoModal'
