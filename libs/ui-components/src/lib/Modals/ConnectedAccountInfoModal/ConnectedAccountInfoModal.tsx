@@ -16,7 +16,7 @@ export interface ConnectToWalletModalProps {
   isOpen: boolean
   onOpenChange: () => void
 }
-export const ConnectToWalletModal = ({
+export const ConnectedAccountInfoModal = ({
   isOpen,
   onOpenChange,
 }: ConnectToWalletModalProps) => {
