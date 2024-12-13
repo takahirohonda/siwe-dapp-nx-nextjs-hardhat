@@ -1,7 +1,12 @@
+'use client'
 import clsx from 'clsx'
+import { useSession } from 'next-auth/react'
 import { ConnectToWallet } from 'ui-components'
 
 const HomePage = () => {
+  const { data: session, status } = useSession()
+  console.log(session)
+  console.log(status)
   return (
     <>
       <div className="flex flex-col lg:flex-row">

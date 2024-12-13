@@ -1,13 +1,60 @@
 'use client'
 
-import { useAccount } from 'wagmi'
+import { useAccount, useSignMessage } from 'wagmi'
 import { ConnectedButtonGroup } from './ConnectedButtonGroup'
 import { ConnectToWalletButton } from './ConnectToWalletButton'
-import { useEffect, useState } from 'react'
-
+import { useCallback, useEffect, useState } from 'react'
+import { getAccount } from '@wagmi/core'
+import { signIn, useSession } from 'next-auth/react'
+import { SiweMessage } from 'siwe'
+import { config } from 'utils-wagmi'
 export const ConnectToWallet = () => {
-  const { isConnected } = useAccount()
+  const { signMessageAsync } = useSignMessage()
+  const { chainId } = getAccount(config)
+  const { address, isConnected } = useAccount()
+
   const [isClient, setIsClient] = useState(false)
+
+  const { data: session } = useSession()
+
+  const handleLogin = useCallback(
+    () => async () => {
+      try {
+        const res = await fetch('/api/auth/csrf')
+        const { csrfToken } = await res.json()
+
+        const message = new SiweMessage({
+          domain: window.location.host,
+          address: address,
+          statement: 'Sign in with Ethereum to the app.',
+          uri: window.location.origin,
+          version: '1',
+          chainId,
+          nonce: csrfToken,
+        })
+
+        const signature = await signMessageAsync({
+          message: message.prepareMessage(),
+        })
+
+        signIn('credentials', {
+          message: JSON.stringify(message),
+          redirect: false,
+          signature,
+          callbackUrl: '/protected',
+        })
+      } catch (error) {
+        window.alert(error)
+      }
+    },
+    [address, chainId, signMessageAsync]
+  )
+
+  useEffect(() => {
+    if (isConnected && !session) {
+      handleLogin()
+    }
+  }, [handleLogin, isConnected, session])
 
   useEffect(() => {
     setIsClient(true)
@@ -23,4 +70,7 @@ export const ConnectToWallet = () => {
       {!isConnected ? <ConnectToWalletButton /> : <ConnectedButtonGroup />}
     </div>
   )
+}
+function useNetwork(): { chain: any } {
+  throw new Error('Function not implemented.')
 }
