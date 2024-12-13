@@ -17,7 +17,7 @@ export const Header = () => {
     >
       <div className="flex">
         <div className="flex mr-[48px]">
-          <BrandHeader text="SIWE Auth" />
+          <BrandHeader text="🙄 Gamblah" />
         </div>
       </div>
       <div className="hidden lg:flex grow items-center">

@@ -6,8 +6,17 @@ export const PageLinks = () => (
     <Link className="hover:text-link-blue" href="/">
       Home
     </Link>
-    <Link className="hover:text-link-blue" href="/">
-      Pricing
+    <Link className="hover:text-link-blue" href="/arena">
+      Game Arena
+    </Link>
+    <Link className="hover:text-link-blue" href="/dashboard">
+      Dashboard
+    </Link>
+    <Link className="hover:text-link-blue" href="/about">
+      About
+    </Link>
+    <Link className="hover:text-link-blue" href="/no-auth-test">
+      No Auth Test
     </Link>
   </>
 )

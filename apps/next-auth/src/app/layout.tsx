@@ -2,8 +2,8 @@ import './global.css'
 
 import { AppWrapper } from '../components/AppWrapper/AppWrapper'
 export const metadata = {
-  title: 'SIWE example',
-  description: 'Experimenting with Sign In With Ethereum (SIWE)',
+  title: 'Gambla 🙄',
+  description: 'Be a crypto gladiator...',
 }
 
 export default function RootLayout({
@@ -13,8 +13,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-primary-black h-screen">
-        <AppWrapper>{children}</AppWrapper>
+      <body className="bg-primary-black">
+        <div className="container h-full flex flex-col px-[16px]">
+          <AppWrapper>{children}</AppWrapper>
+        </div>
       </body>
     </html>
   )
