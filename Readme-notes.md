@@ -2,7 +2,9 @@
 
 ## SSO solution design
 
-We use `NextAuth.js` for authentication. `CredentialsProvide` to customise authentication logic by using SIWE.
+We use `Auth.js` for authentication.
+
+Using Credentials (https://authjs.dev/getting-started/authentication/credentials).
 
 ## What is SIWE?
 
@@ -84,6 +86,82 @@ Nonce in cryptography means “number once,” and this arbitrary number is only
 ## REFERENCE
 
 [Wagmi SIWE example with NextJs](https://1.x.wagmi.sh/examples/sign-in-with-ethereum) -> `withIronSessionApiRoute` is deprecated (https://github.com/vvo/iron-session/issues/679)
+
+## Persisting Nonce with session-based storage
+
+The frontend get nonce from the API and then send back to the backend with chain information. The backend has to use the same nonce to verify. For this, we can use session based storage mechanism with `iron-session` or `auth.js`.
+
+Using iron-session
+
+`app/api/nonce/route.js`
+
+```ts
+import { withIronSessionApiRoute } from 'iron-session/next'
+import { generateNonce } from 'siwe'
+
+export const ironOptions = {
+  cookieName: 'siwe-session',
+  password: process.env.SECRET_COOKIE_PASSWORD, // Use a secure environment variable
+  cookieOptions: {
+    secure: process.env.NODE_ENV === 'production',
+  },
+}
+
+export default withIronSessionApiRoute(async function handler(req, res) {
+  if (req.method === 'GET') {
+    const nonce = generateNonce()
+    req.session.nonce = nonce
+    await req.session.save()
+    res.setHeader('Content-Type', 'text/plain')
+    res.send(nonce)
+  } else {
+    res.status(405).end() // Method Not Allowed
+  }
+}, ironOptions)
+```
+
+`app/api/verify/route.js`
+
+```ts
+import { withIronSessionApiRoute } from 'iron-session/next'
+import { ironOptions } from './nonce' // Adjust the path as necessary
+
+export default withIronSessionApiRoute(async function handler(req, res) {
+  if (req.method === 'POST') {
+    const { nonce } = req.session
+    const { returnedNonce } = req.body
+
+    if (nonce === returnedNonce) {
+      res.status(200).json({ success: true })
+    } else {
+      res.status(400).json({ error: 'Invalid nonce' })
+    }
+  } else {
+    res.status(405).end() // Method Not Allowed
+  }
+}, ironOptions)
+```
+
+Frontend
+
+```ts
+async function getNonce() {
+  const response = await fetch('/api/nonce')
+  return await response.text()
+}
+
+async function verifyNonce(returnedNonce) {
+  const response = await fetch('/api/verify', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ returnedNonce }),
+  })
+
+  return await response.json()
+}
+```
 
 ### To do
 

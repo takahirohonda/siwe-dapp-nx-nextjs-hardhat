@@ -1,9 +1,12 @@
+import { getIronSession } from 'iron-session'
 import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
-import { getCsrfToken } from 'next-auth/react'
-import { SiweMessage } from 'siwe'
 
-export const handlers = NextAuth({
+import { SiweMessage } from 'siwe'
+import { SessionData, sessionOptions } from './iron-session-config'
+import { cookies } from 'next/headers'
+
+export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
     CredentialsProvider({
       name: 'Ethereum',
@@ -20,23 +23,38 @@ export const handlers = NextAuth({
         },
       },
       async authorize(credentials, req) {
+        console.log('checking credentials: ', JSON.stringify(credentials))
         try {
-          const siwe = new SiweMessage(JSON.parse(credentials?.message || '{}'))
+          const ironSession = await getIronSession<SessionData>(
+            cookies(),
+            sessionOptions
+          )
+          console.log('checking nonce: ', ironSession.nonce)
+
+          const siwe = new SiweMessage(JSON.parse(credentials?.message as any))
+          console.log('checking siwe: ', JSON.stringify(siwe))
+
           const nextAuthUrl = new URL(process.env.NEXTAUTH_URL || '')
+          console.log('checking nextAuthUrl: ', JSON.stringify(nextAuthUrl))
 
           const result = await siwe.verify({
-            signature: credentials?.signature || '',
+            signature: (credentials?.signature as string) || '',
             domain: nextAuthUrl.host,
-            nonce: await getCsrfToken({ req }),
+            nonce: ironSession.nonce,
           })
 
+          console.log('checking result: ', JSON.stringify(result))
+
           if (result.success) {
+            // once authenticated, destroy the iron session
+            ironSession.destroy()
             return {
               id: siwe.address,
             }
           }
           return null
         } catch (e) {
+          console.log(`this is the error from authenticate function: ${e}`)
           return null
         }
       },

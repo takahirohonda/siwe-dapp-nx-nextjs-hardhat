@@ -17,41 +17,41 @@ export const ConnectToWallet = () => {
 
   const { data: session } = useSession()
 
-  const handleLogin = useCallback(
-    () => async () => {
-      try {
-        const res = await fetch('/api/auth/csrf')
-        const { csrfToken } = await res.json()
+  const handleLogin = useCallback(async () => {
+    try {
+      const res = await fetch('/api/nonce')
+      console.log(`checking res: ${JSON.stringify(res.json())}`)
+      const nonce = await res.json()
+      console.log(`checking nonce: ${nonce}`)
 
-        const message = new SiweMessage({
-          domain: window.location.host,
-          address: address,
-          statement: 'Sign in with Ethereum to the app.',
-          uri: window.location.origin,
-          version: '1',
-          chainId,
-          nonce: csrfToken,
-        })
+      const message = new SiweMessage({
+        domain: window.location.host,
+        address: address,
+        statement: 'Sign in with Ethereum to the app.',
+        uri: window.location.origin,
+        chainId,
+        nonce,
+      })
 
-        const signature = await signMessageAsync({
-          message: message.prepareMessage(),
-        })
+      const signature = await signMessageAsync({
+        message: message.prepareMessage(),
+      })
 
-        signIn('credentials', {
-          message: JSON.stringify(message),
-          redirect: false,
-          signature,
-          callbackUrl: '/protected',
-        })
-      } catch (error) {
-        window.alert(error)
-      }
-    },
-    [address, chainId, signMessageAsync]
-  )
+      await signIn('credentials', {
+        message: JSON.stringify(message),
+        redirect: false,
+        signature,
+        callbackUrl: '/protected',
+      })
+    } catch (error) {
+      // window.alert(error)
+      console.log(error)
+    }
+  }, [address, chainId, signMessageAsync])
 
   useEffect(() => {
     if (isConnected && !session) {
+      console.log('calling handle login...')
       handleLogin()
     }
   }, [handleLogin, isConnected, session])
@@ -70,7 +70,4 @@ export const ConnectToWallet = () => {
       {!isConnected ? <ConnectToWalletButton /> : <ConnectedButtonGroup />}
     </div>
   )
-}
-function useNetwork(): { chain: any } {
-  throw new Error('Function not implemented.')
 }

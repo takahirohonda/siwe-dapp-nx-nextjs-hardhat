@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { ConnectToWallet } from '../ConnectToWallet/ConnectToWallet'
+import { ConnectToWallet } from '../SSO/ConnectToWallet/ConnectToWallet'
+import { AuthButtonGroup } from '../SSO/AuthButtonGroup'
 
 export const PageLinks = () => (
   <>
@@ -28,7 +29,7 @@ export const Nav = () => {
         <PageLinks />
       </div>
       <div className="flex gap-[24px] items-center">
-        <ConnectToWallet />
+        <AuthButtonGroup />
       </div>
     </>
   )

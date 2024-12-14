@@ -20,27 +20,17 @@ export const AppWrapper = ({ children }: { children: React.ReactNode }) => {
     }
   }, [])
   return (
-    <SessionProvider session={session} refetchInterval={0}>
-      <WagmiProviderWrapper>
-        {/* Next UI Provider creates <div data-overlay-container="true">
+    <WagmiProviderWrapper>
+      {/* Next UI Provider creates <div data-overlay-container="true">
       So we need to add the style tot he div */}
+      <SessionProvider session={session} refetchInterval={0}>
         <NextUIProviderWrapper className="h-screen flex flex-col">
           <header>
             <Header />
           </header>
-          <main
-            className={clsx(`
-            flex
-            flex-col
-            items-center
-            justify-center     
-            flex-grow
-          `)}
-          >
-            {children}
-          </main>
+          {children}
         </NextUIProviderWrapper>
-      </WagmiProviderWrapper>
-    </SessionProvider>
+      </SessionProvider>
+    </WagmiProviderWrapper>
   )
 }

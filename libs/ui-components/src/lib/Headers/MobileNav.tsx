@@ -4,7 +4,7 @@ import clsx from 'clsx'
 import { useState } from 'react'
 import { MobileNavBurger } from './MobileNavBurger'
 import { PageLinks } from './Nav'
-import { ConnectToWallet } from '../ConnectToWallet/ConnectToWallet'
+import { ConnectToWallet } from '../SSO/ConnectToWallet/ConnectToWallet'
 
 export const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false)

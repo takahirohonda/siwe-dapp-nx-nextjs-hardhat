@@ -1,14 +1,22 @@
 'use client'
 import clsx from 'clsx'
 import { useSession } from 'next-auth/react'
-import { ConnectToWallet } from 'ui-components'
+import { AuthButtonGroup } from 'ui-components'
 
 const HomePage = () => {
   const { data: session, status } = useSession()
   console.log(session)
   console.log(status)
   return (
-    <>
+    <main
+      className={clsx(`
+            flex
+            flex-col
+            items-center
+            justify-center     
+            flex-grow
+          `)}
+    >
       <div className="flex flex-col lg:flex-row">
         <div className="w-auto lg:w-[60%] flex text-center">
           <div className="flex flex-col">
@@ -42,11 +50,11 @@ const HomePage = () => {
             Imperfection is the fingerprint of your soul...
           </h2>
           <div>
-            <ConnectToWallet />
+            <AuthButtonGroup />
           </div>
         </div>
       </div>
-    </>
+    </main>
   )
 }
 
