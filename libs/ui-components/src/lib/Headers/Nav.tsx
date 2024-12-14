@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { ConnectToWallet } from '../SSO/ConnectToWallet/ConnectToWallet'
 import { AuthButtonGroup } from '../SSO/AuthButtonGroup'
 
 export const PageLinks = () => (
@@ -8,7 +7,7 @@ export const PageLinks = () => (
       Home
     </Link>
     <Link className="hover:text-link-blue" href="/arena">
-      Game Arena
+      Arena
     </Link>
     <Link className="hover:text-link-blue" href="/dashboard">
       Dashboard

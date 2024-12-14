@@ -29,8 +29,9 @@ const HomePage = () => {
             >
               Pump and Duel
             </h1>
-            <h2 className="text-secondary-text text-[24px] md:text-[36px]">
-              Art is the sublimation of shitty experiences...
+            <h2 className="yellow-red-gradient text-[32px] md:text-[36px]">
+              Certainty of death. Small chance of success. What are we waiting
+              for?
             </h2>
           </div>
         </div>
@@ -46,8 +47,8 @@ const HomePage = () => {
             ml-[0px] 
             lg:ml-[16px]`)}
         >
-          <h2 className="text-secondary-text text-[20px] md:text-[24px]">
-            Imperfection is the fingerprint of your soul...
+          <h2 className="light-blue-purple-gradient  text-[28px] md:text-[24px]">
+            Nobody puts Baby in a corner.
           </h2>
           <div>
             <AuthButtonGroup />
