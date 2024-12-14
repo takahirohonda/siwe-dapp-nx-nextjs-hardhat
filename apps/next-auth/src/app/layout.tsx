@@ -1,6 +1,7 @@
 import './global.css'
 
 import { AppWrapper } from '../components/AppWrapper/AppWrapper'
+
 export const metadata = {
   title: 'Gambla 🙄',
   description: 'Be a crypto gladiator...',

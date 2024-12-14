@@ -1,9 +1,9 @@
 'use client'
 
 import { Button, useDisclosure } from '@nextui-org/react'
-import { GradientButton } from '../Buttons/GradientButton'
+import { GradientButton } from '../../Buttons/GradientButton'
 import { useDisconnect } from 'wagmi'
-import { ConnectedAccountInfoModal } from '../Modals/ConnectedAccountInfoModal/ConnectedAccountInfoModal'
+import { ConnectedAccountInfoModal } from '../ConnectedAccountInfoModal/ConnectedAccountInfoModal'
 
 export const ConnectedButtonGroup = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
@@ -14,7 +14,7 @@ export const ConnectedButtonGroup = () => {
         Connected Account Info
       </Button>
       <GradientButton variant="secondary" onClick={disconnect}>
-        Disconnect
+        No, I want to disconnect...
       </GradientButton>
       <ConnectedAccountInfoModal isOpen={isOpen} onOpenChange={onOpenChange} />
     </div>

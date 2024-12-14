@@ -26,7 +26,7 @@
     "src/**/*.jsx",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "../ui-components/src/lib/Modals/ConnectToWalletModal/ConnectToWalletModal.tsx",
-    "../ui-components/src/lib/Modals/ConnectToWalletModal/WalletOptions.tsx"
+    "../ui-components/src/lib/SSO/ConnectToWalletModal/ConnectToWalletModal.tsx",
+    "../ui-components/src/lib/SSO/ConnectToWalletModal/WalletOptions.tsx"
   ]
 }
