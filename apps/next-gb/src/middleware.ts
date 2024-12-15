@@ -2,6 +2,6 @@
 // https://authjs.dev/getting-started/installation?framework=Next.js
 export { auth as middleware } from './auth/auth'
 
-export const config = {
-  matcher: '/:path*',
-}
+// export const config = {
+//   matcher: '/:path*',
+// }

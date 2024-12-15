@@ -15,6 +15,13 @@
       "when": 1734226080541,
       "tag": "0001_public_the_leader",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1734229233273,
+      "tag": "0002_aberrant_eternals",
+      "breakpoints": true
     }
   ]
 }

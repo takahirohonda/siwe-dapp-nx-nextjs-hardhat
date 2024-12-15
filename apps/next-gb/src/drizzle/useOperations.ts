@@ -10,6 +10,11 @@ export const getUserByAddress = async (address: string) => {
   return user
 }
 
+export const getUserById = async (id: string) => {
+  const user = await db.select().from(users).where(eq(users.id, id))
+  return user
+}
+
 export const createUser = async (data: InsertUser) => {
   await db.insert(users).values(data)
 }

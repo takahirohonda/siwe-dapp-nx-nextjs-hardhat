@@ -6,6 +6,7 @@ import { SiweMessage } from 'siwe'
 import { IronSessionData, ironSessionOptions } from './iron-session-config'
 import { cookies } from 'next/headers'
 import { SessionData, TokenData } from './auth.types'
+import { findOrCreateUserAndGetId } from './findOrCreateUser'
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
@@ -49,11 +50,12 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           if (result.success) {
             // once authenticated, destroy the iron session
             ironSession.destroy()
-
+            // create or find a user in the db
+            const userId = await findOrCreateUserAndGetId(siwe.address)
             // these are the fields included in the jwt token
             return {
               address: siwe.address,
-              id: crypto.randomUUID(), // replace it with the address from the db
+              id: userId, // replace it with the address from the db
             }
           }
           return null
