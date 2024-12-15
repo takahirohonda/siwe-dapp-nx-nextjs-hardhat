@@ -1,0 +1,21 @@
+{
+  "name": "next-gb",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/next-gb",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "drizzle:generate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn drizzle-kit generate --config=apps/next-gb/drizzle.config.ts"
+      }
+    },
+    "drizzle:migrate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "export NODE_TLS_REJECT_UNAUTHORIZED=0 && yarn drizzle-kit migrate --config=apps/next-gb/drizzle.config.ts"
+      }
+    }
+  }
+}

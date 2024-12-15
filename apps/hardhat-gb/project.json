@@ -1,0 +1,39 @@
+{
+  "name": "hardhat",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/hardhat-gb/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "compile": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn hardhat compile --config apps/hardhat-gb/hardhat.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn hardhat test --config apps/hardhat-gb/hardhat.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
+      }
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn hardhat run apps/hardhat-gb/scripts/deployCounter.ts --network localhost --config apps/hardhat-gb/hardhat.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
+      }
+    },
+    "test-by-grep": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn hardhat test --grep Hero --config apps/hardhat-gb/hardhat.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
+      }
+    },
+    "test-with-gas-report": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "export REPORT_GAS=true && yarn hardhat test --config apps/hardhat-gb/hardhat.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
+      }
+    }
+  }
+}

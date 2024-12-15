@@ -1,12 +1,6 @@
 'use client'
 
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-} from '@nextui-org/modal'
+import { Modal, ModalContent, ModalFooter } from '@nextui-org/modal'
 import { Button } from '@nextui-org/button'
 import { useAccount } from 'wagmi'
 import { SignInWithWalletContent } from './SignInWithWalletContent'
