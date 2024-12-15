@@ -9,6 +9,7 @@ import {
 } from '@nextui-org/modal'
 import { Button } from '@nextui-org/button'
 import { Input, Textarea } from '@nextui-org/react'
+import { updateUserProfile } from './formSubmitAction'
 
 export interface ConnectToWalletModalProps {
   isOpen: boolean
@@ -28,9 +29,14 @@ export const UpdateModal = ({
             </ModalHeader>
             <ModalBody>
               <form>
-                <Input label="Player Name" type="playerName" />
+                <Input
+                  label="Player Name"
+                  type="playerName"
+                  name="playerName"
+                />
                 <Textarea
-                  label="Description"
+                  label="Bio"
+                  name="bio"
                   placeholder="Enter your description"
                 />
                 <Button color="primary" variant="light" type="submit">

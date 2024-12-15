@@ -50,7 +50,6 @@ export const GradientButton = ({
         text-center
         rounded-full
         hover:brightness-90
-        primary-button-gradient
         `,
         getButtonVariantStyle(variant),
         getButtonSizeStyle(size)

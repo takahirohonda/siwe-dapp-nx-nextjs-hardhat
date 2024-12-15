@@ -4,7 +4,9 @@ import { useAccount, useBalance } from 'wagmi'
 import { ConnectedNetwork } from 'ui-components'
 import { getAccount } from 'wagmi/actions'
 import { config } from 'utils-wagmi'
-import { UserInfo } from './AuthorisedArena/UserInfo'
+import { UserInfo } from './AuthorisedArena/for-testing/UserInfo'
+import { UserGreetingMessage } from './AuthorisedArena/UserGreetingMessage'
+import { PlayGameButton } from './AuthorisedArena/PlayGameButton'
 
 export const AuthorisedArena = () => {
   const { address } = useAccount()
@@ -13,9 +15,7 @@ export const AuthorisedArena = () => {
 
   return (
     <div className="flex flex-col gap-[24px]">
-      <h2 className="yellow-red-gradient text-[36px] md:text-[36px]">
-        Here we come....
-      </h2>
+      {/* <UserGreetingMessage /> */}
       {address && (
         <div className="flex flex-col gap-[16px]">
           <p className="yellow-red-gradient text-[32px] md:text-[36px]">
@@ -30,6 +30,7 @@ export const AuthorisedArena = () => {
         </div>
       )}
       <UserInfo />
+      {/* <PlayGameButton /> */}
     </div>
   )
 }

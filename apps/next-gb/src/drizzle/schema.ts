@@ -1,10 +1,4 @@
-import {
-  int,
-  integer,
-  primaryKey,
-  sqliteTable,
-  text,
-} from 'drizzle-orm/sqlite-core'
+import { int, integer, sqliteTable, text } from 'drizzle-orm/sqlite-core'
 import { randomUUID } from 'crypto'
 import { sql } from 'drizzle-orm'
 
@@ -54,5 +48,5 @@ export type SelectUser = typeof users.$inferSelect
 export type InsertUserProfile = typeof userProfile.$inferInsert
 export type SelectUserProfile = typeof userProfile.$inferSelect
 
-export type InsertGemeRecords = typeof gameRecords.$inferInsert
+export type InsertGameRecords = typeof gameRecords.$inferInsert
 export type SelectGameRecords = typeof gameRecords.$inferSelect
