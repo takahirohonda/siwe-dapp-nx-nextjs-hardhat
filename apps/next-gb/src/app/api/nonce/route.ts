@@ -4,7 +4,7 @@ import { generateNonce } from 'siwe'
 import {
   IronSessionData,
   ironSessionOptions,
-} from '../../../next-auth/iron-session-config'
+} from '../../../auth/iron-session-config'
 
 export async function GET() {
   const nonce = generateNonce()

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { auth } from '../../../next-auth/auth'
+import { auth } from '../../../auth/auth'
 
 export const GET = auth(function GET(req: Request & { auth?: any }) {
   if (req.auth) return NextResponse.json(req.auth)

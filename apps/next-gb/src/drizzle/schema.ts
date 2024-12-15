@@ -12,7 +12,7 @@ const createdAt = () =>
     .default(sql`CURRENT_TIMESTAMP`)
     .notNull()
 
-export const users = sqliteTable('users_table', {
+export const users = sqliteTable('users', {
   id: id(),
   createdAt: createdAt(),
   ethereumAddress: text('ethereum_address').notNull().unique(),
@@ -20,3 +20,6 @@ export const users = sqliteTable('users_table', {
   playerName: text('player_name').notNull(),
   email: text().notNull().unique(),
 })
+
+export type InsertUser = typeof users.$inferInsert
+export type SelectUser = typeof users.$inferSelect
