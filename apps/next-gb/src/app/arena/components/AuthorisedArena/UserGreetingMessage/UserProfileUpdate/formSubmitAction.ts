@@ -3,6 +3,7 @@ import { updateUser } from '../../../../../../drizzle/useOperations'
 import { upsertUserProfile } from '../../../../../../drizzle/userProfileOperations'
 import { getAuthenticatedUserId } from '../../../../../../auth/auth.utils'
 
+// Using this in form action={}
 type UpdateUserProfileFormData = {
   playerName: string
   description?: string
