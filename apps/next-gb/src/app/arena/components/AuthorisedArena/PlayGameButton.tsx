@@ -37,8 +37,10 @@ export const PlayGameButton = () => {
         text-center
         rounded-full
         hover:brightness-90
-        red-purple-button-gradient
-        py-[16px] px-[38px]
+        primary-button-gradient
+        py-[16px]
+        px-[16px]
+        w-[200px]
         `
       )}
       onClick={handleOnClick}

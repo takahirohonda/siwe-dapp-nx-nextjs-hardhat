@@ -2,7 +2,6 @@
 import { NextUIProviderWrapper } from '../NextUiProviderWrapper/NextUiProviderWrapper'
 import { WagmiProviderWrapper } from '../WagmiProviderWrapper/WagmiProviderWrapper'
 import { Header } from 'ui-components'
-import { clsx } from 'clsx'
 import { getSession, SessionProvider } from 'next-auth/react'
 import { useEffect, useState } from 'react'
 export const AppWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -18,7 +17,8 @@ export const AppWrapper = ({ children }: { children: React.ReactNode }) => {
     } else {
       getAuthSession()
     }
-  }, [])
+  }, [session])
+
   return (
     <WagmiProviderWrapper>
       {/* Next UI Provider creates <div data-overlay-container="true">

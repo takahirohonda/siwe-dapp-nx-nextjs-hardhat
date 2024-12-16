@@ -4,6 +4,12 @@
   -webkit-text-fill-color: transparent;
 }
 
+.yellow-light-blue-gradient-2 {
+  background: linear-gradient(225deg, #3dd6f5 -7.08%, #ebff38 90.68%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .blue-light-blue-gradient {
   background: linear-gradient(225deg, #405bff -5.3%, #3dd6f5 112.86%);
   -webkit-background-clip: text;

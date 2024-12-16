@@ -1,6 +1,6 @@
 import { db } from './db'
 import { eq } from 'drizzle-orm'
-import { type InsertGameRecords, gameRecords } from './schema'
+import { type InsertGameRecords, type SelectUser, gameRecords } from './schema'
 
 export const getGameRecordByUserId = async (userId: string) => {
   return await db
@@ -14,5 +14,9 @@ export const insertGameRecord = async (data: InsertGameRecords) => {
   if (!userId) {
     throw new Error('User id is required')
   }
-  await db.insert(gameRecords).values(data)
+  return await db.insert(gameRecords).values(data)
+}
+
+export const deleteGameRecordsByUserId = async (userId: SelectUser['id']) => {
+  await db.delete(gameRecords).where(eq(gameRecords.userId, userId))
 }

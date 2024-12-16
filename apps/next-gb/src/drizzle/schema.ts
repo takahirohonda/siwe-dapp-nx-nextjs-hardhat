@@ -24,6 +24,7 @@ export const userProfile = sqliteTable('user_profile', {
   id: integer('id').primaryKey(),
   userId: text('user_id')
     .notNull()
+    .unique()
     .references(() => users.id, { onDelete: 'cascade' }),
   bio: text('bio'),
   avatarUrl: text('avatar_url'),

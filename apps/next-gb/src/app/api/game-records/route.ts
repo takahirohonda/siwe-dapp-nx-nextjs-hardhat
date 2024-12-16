@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { auth } from '../../../auth/auth'
 import { getAuthenticatedUserId } from '../../../auth/auth.utils'
 import {
+  deleteGameRecordsByUserId,
   getGameRecordByUserId,
   insertGameRecord,
 } from '../../../drizzle/gameRecordsOperations'
@@ -35,4 +36,18 @@ export const POST = auth(async function POST(
   console.log(`Insert game record result: ${JSON.stringify(insertGameResult)}`)
 
   return NextResponse.json({ message: 'Game record has been inserted' })
+})
+
+export const DELETE = auth(async function DELETE(
+  req: Request & { auth?: unknown }
+) {
+  if (!req.auth) {
+    return NextResponse.json({ message: 'Not authenticated' }, { status: 401 })
+  }
+
+  const userId = await getAuthenticatedUserId()
+  const records = await deleteGameRecordsByUserId(userId)
+  console.log(`Delete user has been requested with userId: ${userId}`)
+
+  return NextResponse.json({ message: 'Game record has been deleted' })
 })
