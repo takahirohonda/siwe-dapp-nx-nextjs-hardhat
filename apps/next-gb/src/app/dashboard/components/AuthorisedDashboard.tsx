@@ -2,6 +2,7 @@
 
 import { useAccount } from 'wagmi'
 import { ConnectedNetwork } from 'ui-components'
+import { GameRecords } from './AuthorisedDashboard/GameRecords'
 
 export const AuthorisedDashboard = () => {
   const { address } = useAccount()
@@ -14,6 +15,7 @@ export const AuthorisedDashboard = () => {
           <ConnectedNetwork />
         </div>
       )}
+      <GameRecords />
     </div>
   )
 }

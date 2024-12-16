@@ -28,7 +28,7 @@ export const UpdateModal = ({
               Update your profile
             </ModalHeader>
             <ModalBody>
-              <form>
+              <form action={updateUserProfile}>
                 <Input
                   label="Player Name"
                   type="playerName"
@@ -39,7 +39,7 @@ export const UpdateModal = ({
                   name="bio"
                   placeholder="Enter your description"
                 />
-                <Button color="primary" variant="light" type="submit">
+                <Button color="primary" variant="light" type="button">
                   Update
                 </Button>
               </form>

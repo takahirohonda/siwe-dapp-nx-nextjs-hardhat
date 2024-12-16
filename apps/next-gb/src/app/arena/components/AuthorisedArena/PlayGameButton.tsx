@@ -1,27 +1,32 @@
-import { getAuthenticatedUserId } from '../../../../auth/auth.utils'
-import { insertGameRecord } from '../../../../drizzle/gameRecordsOperations'
 import clsx from 'clsx'
 
-export const PlayGameButton = async () => {
+export const PlayGameButton = () => {
   const handleOnClick = async () => {
-    const userId = await getAuthenticatedUserId()
-    await insertGameRecord({
-      userId,
-      score: 12,
-      win: 1,
-      battleName: 'Epic Battle 1',
+    await fetch('/api/game-records', {
+      method: 'POST',
+      body: JSON.stringify({
+        score: 10,
+        win: 1,
+        battleName: 'Epic Battle 1',
+      }),
     })
-    await insertGameRecord({
-      userId,
-      score: 8,
-      win: 1,
-      battleName: 'Epic Battle 2',
+
+    await fetch('/api/game-records', {
+      method: 'POST',
+      body: JSON.stringify({
+        score: 8,
+        win: 1,
+        battleName: 'Epic Battle 2',
+      }),
     })
-    await insertGameRecord({
-      userId,
-      score: 9,
-      win: 1,
-      battleName: 'Epic Battle 3',
+
+    await fetch('/api/game-records', {
+      method: 'POST',
+      body: JSON.stringify({
+        score: 15,
+        win: 1,
+        battleName: 'Epic Battle 3',
+      }),
     })
   }
   return (

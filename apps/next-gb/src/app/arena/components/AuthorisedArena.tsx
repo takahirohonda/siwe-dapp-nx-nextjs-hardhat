@@ -15,7 +15,7 @@ export const AuthorisedArena = () => {
 
   return (
     <div className="flex flex-col gap-[24px]">
-      {/* <UserGreetingMessage /> */}
+      <UserGreetingMessage />
       {address && (
         <div className="flex flex-col gap-[16px]">
           <p className="yellow-red-gradient text-[32px] md:text-[36px]">
@@ -30,7 +30,7 @@ export const AuthorisedArena = () => {
         </div>
       )}
       <UserInfo />
-      {/* <PlayGameButton /> */}
+      <PlayGameButton />
     </div>
   )
 }

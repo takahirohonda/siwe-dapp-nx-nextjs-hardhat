@@ -6,6 +6,7 @@ export const getUserProfileById = async (userId: string) => {
   return await db
     .select()
     .from(userProfile)
+    .innerJoin(users, eq(users.id, userProfile.userId))
     .where(eq(userProfile.userId, userId))
 }
 
