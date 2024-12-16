@@ -53,7 +53,7 @@ export const DELETE = auth(async function DELETE(
   }
 
   const userId = await getAuthenticatedUserId()
-  const records = await deleteUser(userId)
+  await deleteUser(userId)
   console.log(`Delete user has been requested with userId: ${userId}`)
 
   return NextResponse.json({ message: 'User profile has been deleted' })
