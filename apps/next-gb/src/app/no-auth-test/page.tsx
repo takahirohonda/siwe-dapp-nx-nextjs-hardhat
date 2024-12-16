@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-export const NoAuthTestPage = () => {
+const NoAuthTestPage = () => {
   const [user, setUser] = useState()
 
   useEffect(() => {

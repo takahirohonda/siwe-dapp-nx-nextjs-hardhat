@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-export const AboutPage = () => {
+const AboutPage = () => {
   return (
     <div>
       <h1
