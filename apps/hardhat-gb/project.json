@@ -1,5 +1,5 @@
 {
-  "name": "hardhat",
+  "name": "hardhat-gb",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/hardhat-gb/src",
   "projectType": "application",
