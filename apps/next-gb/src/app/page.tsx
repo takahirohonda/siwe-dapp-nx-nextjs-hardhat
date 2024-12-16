@@ -2,11 +2,13 @@
 import clsx from 'clsx'
 import { useSession } from 'next-auth/react'
 import { AuthButtonGroup } from 'ui-components'
+import { PageContentLoader } from '../components/PageContentLoader/PageContent'
 
 const HomePage = () => {
-  const { data: session, status } = useSession()
-  console.log(session)
-  console.log(status)
+  const { status } = useSession()
+  if (status === 'loading') {
+    return <PageContentLoader />
+  }
   return (
     <main
       className={clsx(`
