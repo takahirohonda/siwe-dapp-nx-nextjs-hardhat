@@ -32,7 +32,7 @@ contract GameCharacters {
   }
 
   mapping(address => uint) public ownerToGameCharacter;
-  mapping (address => uint) ownerCharacterCount;
+  mapping(address => uint) ownerCharacterCount;
   mapping(address => uint) public ownerToGameLevel;
 
   event IncrementLevel(uint level);

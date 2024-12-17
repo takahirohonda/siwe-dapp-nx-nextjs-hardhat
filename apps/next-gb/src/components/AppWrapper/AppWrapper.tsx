@@ -24,7 +24,7 @@ export const AppWrapper = ({ children }: { children: React.ReactNode }) => {
       {/* Next UI Provider creates <div data-overlay-container="true">
       So we need to add the style tot he div */}
       <SessionProvider session={session} refetchInterval={0}>
-        <NextUIProviderWrapper className="h-screen flex flex-col">
+        <NextUIProviderWrapper className="flex min-h-screen flex-col">
           <header>
             <Header />
           </header>

@@ -29,7 +29,12 @@
         "command": "yarn hardhat run apps/hardhat-gb/deploy-scripts/deployGameCharactersLocal.ts --network localhost --config apps/hardhat-gb/hardhat.local.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
       }
     },
-
+    "deploy:counter:alchemy-sepolia": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn hardhat run apps/hardhat-gb/deploy-scripts/deployCounterTestnet.ts --config apps/hardhat-gb/hardhat.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
+      }
+    },
     "deploy:level:alchemy-sepolia": {
       "executor": "nx:run-commands",
       "options": {

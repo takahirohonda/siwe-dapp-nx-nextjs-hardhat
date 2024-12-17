@@ -8,6 +8,8 @@ import { UserGreetingMessage } from './AuthorisedArena/UserGreetingMessage'
 import { PlayGameButton } from './AuthorisedArena/PlayGameButton'
 import { ResetGameButton } from './AuthorisedArena/ResetGameButton'
 import { DeleteUserButton } from './AuthorisedArena/DeleteUserButton'
+import { PlayerAssets } from './AuthorisedArena/PlayerAssets'
+import { Counter } from './AuthorisedArena/PlayerAssets/Counter'
 
 export const AuthorisedArena = () => {
   const { address } = useAccount()
@@ -32,6 +34,10 @@ export const AuthorisedArena = () => {
       <div className="flex gap-[8px]">
         <DeleteUserButton />
         <ResetGameButton />
+      </div>
+      <div>
+        <h3 className="text-[18px] md:text-[18px]">Player Asset: </h3>
+        <PlayerAssets />
       </div>
     </div>
   )

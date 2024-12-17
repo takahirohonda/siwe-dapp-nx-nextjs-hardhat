@@ -6,6 +6,7 @@
   "author": "takahirohonda <thon6thon6@hotmail.com>",
   "license": "MIT",
   "scripts": {
+    "dev:turbo": "yarn nx dev next-gb --turbo",
     "dev:node": "yarn nx hardhat:node hardhat-gb",
     "deploy-local-1": "yarn nx deploy:level hardhat-gb",
     "deploy-local-2": "yarn nx deploy:character hardhat-gb",
