@@ -32,15 +32,15 @@ This is a Nx repo to build a full-stack dApp with Next.js and Solidity. Technolo
 
 Authentication and API flow diagram:
 
-<img width="50%" src='docs/img/siwe-flow-diagram.png' alt="flow-diagram" />
+<img width="60%" src='docs/img/siwe-flow-diagram.png' alt="flow-diagram" />
 
 Another diagram for SSO flow:
 
-<img width="50%" src='./docs/img/how-siwe-works.png' alt="how-sso-works" />
+<img width="60%" src='./docs/img/how-siwe-works.png' alt="how-sso-works" />
 
 How application works:
 
-<img width="50%" src='./docs/img/how-app-works' alt="how-sso-works" />
+<img width="60%" src='./docs/img/how-app-works.png' alt="how-sso-works" />
 
 ## (2) Get started
 
@@ -58,8 +58,8 @@ yarn nx deploy:character hardhat-gb # deploy to the local node
 yarn nx deploy:character:alchemy-sepolia hardhat-gb # deploy to alchemy testnet
 ```
 
-See
-
 ## REREFENCE
 
 [Setting up this repo](/docs/1-setting-up-this-repo.md)
+[SIWE notes](docs/2-siwe-more-notes.md)
+[Solidity ref](docs/3-writing-solidity.md)
