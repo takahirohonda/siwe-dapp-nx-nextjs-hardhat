@@ -44,8 +44,8 @@ export const Counter = () => {
 
   return (
     <div className="flex gap-[16px]">
-      <Button onPress={incrementLevel}>Increment Count</Button>
-      <p>Current count: {data?.toString()}</p>
+      <Button onPress={incrementLevel}>Update Global State</Button>
+      <p>Current global state: {data?.toString()}</p>
     </div>
   )
 }
