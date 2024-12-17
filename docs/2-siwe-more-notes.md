@@ -1,16 +1,30 @@
-## Notes
+# Notes
 
 ## SSO solution design
 
-We use `Auth.js` for authentication.
+### Authentication and Authenticated session management
 
-Using Credentials (https://authjs.dev/getting-started/authentication/credentials).
+We use `Auth.js` for authentication with custom logic. Once it's authenticated, Auth.js can manage the session.
 
-## Terminologies
-
-**SIWE (Sign-In with Ethereum)**
+### SIWE (Sign-In with Ethereum)
 
 https://docs.login.xyz/general-information/siwe-overview/eip-4361
+
+#### High-level flow in the code
+
+1. Creating SIWE message
+
+![SIWE message frontend](./img/siwe-message-fed.png)
+
+2. Verifying SIWE message backend
+
+![Verify SIWE message](./img/verify-siwe-backend.png)
+
+**Flow**
+
+![Flow](./img/how-siwe-works.png)
+
+## Terminologies
 
 **iron-session**
 
@@ -27,3 +41,15 @@ Nonce in cryptography means “number once,” and this arbitrary number is only
 ## REFERENCE
 
 [Wagmi SIWE example with NextJs](https://1.x.wagmi.sh/examples/sign-in-with-ethereum) -> `withIronSessionApiRoute` is deprecated (https://github.com/vvo/iron-session/issues/679)
+
+```json
+{
+  "heroType": "magician",
+  "properties": [12, 23, 13, 11, 10],
+  "level": 3
+}
+```
+
+```text
+x0.... 00 010010 010110 011111 011110 001101 11
+```

@@ -9,7 +9,6 @@ import { PlayGameButton } from './AuthorisedArena/PlayGameButton'
 import { ResetGameButton } from './AuthorisedArena/ResetGameButton'
 import { DeleteUserButton } from './AuthorisedArena/DeleteUserButton'
 import { PlayerAssets } from './AuthorisedArena/PlayerAssets'
-import { Counter } from './AuthorisedArena/PlayerAssets/Counter'
 
 export const AuthorisedArena = () => {
   const { address } = useAccount()
