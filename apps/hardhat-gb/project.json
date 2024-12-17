@@ -8,31 +8,56 @@
     "compile": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "yarn hardhat compile --config apps/hardhat-gb/hardhat.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
+        "command": "yarn hardhat compile --config apps/hardhat-gb/hardhat.local.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
       }
     },
     "test": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "yarn hardhat test --config apps/hardhat-gb/hardhat.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
+        "command": "yarn hardhat test --config apps/hardhat-gb/hardhat.local.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
       }
     },
-    "deploy": {
+    "deploy:level": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "yarn hardhat run apps/hardhat-gb/scripts/deployCounter.ts --network localhost --config apps/hardhat-gb/hardhat.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
+        "command": "yarn hardhat run apps/hardhat-gb/deploy-scripts/deployGameLevelLocal.ts --network localhost --config apps/hardhat-gb/hardhat.local.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
+      }
+    },
+    "deploy:character": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn hardhat run apps/hardhat-gb/deploy-scripts/deployGameCharactersLocal.ts --network localhost --config apps/hardhat-gb/hardhat.local.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
+      }
+    },
+
+    "deploy:level:alchemy-sepolia": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn hardhat run apps/hardhat-gb/deploy-scripts/deployGameLevelTestnet.ts --config apps/hardhat-gb/hardhat.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
+      }
+    },
+    "deploy:character:alchemy-sepolia": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn hardhat run apps/hardhat-gb/deploy-scripts/deployGameCharactersTestnet.ts --config apps/hardhat-gb/hardhat.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
       }
     },
     "test-by-grep": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "yarn hardhat test --grep Hero --config apps/hardhat-gb/hardhat.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
+        "command": "yarn hardhat test --grep Hero --config apps/hardhat-gb/hardhat.local.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
       }
     },
     "test-with-gas-report": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "export REPORT_GAS=true && yarn hardhat test --config apps/hardhat-gb/hardhat.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
+        "command": "export REPORT_GAS=true && yarn hardhat test --config apps/hardhat-gb/hardhat.local.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
+      }
+    },
+    "hardhat:node": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn hardhat node --config apps/hardhat-gb/hardhat.local.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
       }
     }
   }

@@ -5,7 +5,11 @@ import { GameLevel } from '../typechain-types'
 const deployGameLevelContract = async () => {
   const GameLevelContract = await ethers.getContractFactory('GameLevel')
   const gameLevel = await GameLevelContract.deploy()
-  await gameLevel.waitForDeployment()
+  const deploymentReceipt = await gameLevel.deploymentTransaction()?.wait()
+  console.log(
+    `checking deploymentReceipt: ${JSON.stringify(deploymentReceipt)}`
+  )
+  console.log(`GameLevel contract deployed to: ${gameLevel.target}`)
   return gameLevel
 }
 

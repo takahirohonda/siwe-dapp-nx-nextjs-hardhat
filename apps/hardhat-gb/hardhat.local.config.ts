@@ -1,16 +1,15 @@
 import { HardhatUserConfig } from 'hardhat/config'
 import '@nomicfoundation/hardhat-toolbox'
-require('dotenv').config()
+import 'hardhat-gas-reporter'
 
-const { API_URL, PRIVATE_KEY } = process.env
 const config: HardhatUserConfig = {
   solidity: '0.8.24',
-  defaultNetwork: 'sepolia',
+  gasReporter: {
+    enabled: process.env.REPORT_GAS ? true : false,
+  },
   networks: {
-    hardhat: {},
-    sepolia: {
-      url: API_URL,
-      accounts: [`0x${PRIVATE_KEY}`],
+    hardhat: {
+      chainId: 31337, // it's the default chain id, doesn't need to add it.
     },
   },
 }
