@@ -23,10 +23,16 @@
         "command": "yarn hardhat run apps/hardhat-gb/deploy-scripts/deployGameLevelLocal.ts --network localhost --config apps/hardhat-gb/hardhat.local.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
       }
     },
-    "deploy:character": {
+    "deploy:characters": {
       "executor": "nx:run-commands",
       "options": {
         "command": "yarn hardhat run apps/hardhat-gb/deploy-scripts/deployGameCharactersLocal.ts --network localhost --config apps/hardhat-gb/hardhat.local.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
+      }
+    },
+    "deploy:characters-nonpayable": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn hardhat run apps/hardhat-gb/deploy-scripts/deployGameCharactersLocalNonPayable.ts --network localhost --config apps/hardhat-gb/hardhat.local.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
       }
     },
     "deploy:counter:alchemy-sepolia": {
@@ -41,10 +47,16 @@
         "command": "yarn hardhat run apps/hardhat-gb/deploy-scripts/deployGameLevelTestnet.ts --config apps/hardhat-gb/hardhat.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
       }
     },
-    "deploy:character:alchemy-sepolia": {
+    "deploy:characters:alchemy-sepolia": {
       "executor": "nx:run-commands",
       "options": {
         "command": "yarn hardhat run apps/hardhat-gb/deploy-scripts/deployGameCharactersTestnet.ts --config apps/hardhat-gb/hardhat.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
+      }
+    },
+    "deploy:characters-nonpayable:alchemy-sepolia": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn hardhat run apps/hardhat-gb/deploy-scripts/deployGameCharactersLocalNonPayable.ts --config apps/hardhat-gb/hardhat.config.ts --tsconfig apps/hardhat-gb/tsconfig.json"
       }
     },
     "test-by-grep": {

@@ -2,17 +2,18 @@ import { CHARACTERS_CONTRACT_ADDRESS } from '../../../../../const/const'
 import { Button } from '@nextui-org/react'
 import { useAccount, useReadContract, useWriteContract } from 'wagmi'
 import { characterAbi } from './characterAbi'
+import { useCallback } from 'react'
 
 export const Character = () => {
   const { data: hash, writeContract } = useWriteContract()
   const { address } = useAccount()
-  const createNft = async () => {
+  const createNft = useCallback(async () => {
     await writeContract({
       address: CHARACTERS_CONTRACT_ADDRESS,
       abi: characterAbi,
       functionName: 'createGameCharacter',
     })
-  }
+  }, [writeContract])
 
   const { data } = useReadContract({
     address: CHARACTERS_CONTRACT_ADDRESS,
@@ -56,8 +57,7 @@ export const Character = () => {
     args: [data],
   })
 
-  console.log(`checking count ${data}`)
-  console.log(`checking count data type ${typeof data}`)
+  console.log(`checking character data ${data}`)
 
   return (
     <div className="flex gap-[16px]">

@@ -1,6 +1,8 @@
 # Single Sign-on with Ethereum - dApp monorepo example with Nx, Next.js, Hardhat
 
-This is a Nx repo to build a full-stack dApp with Next.js and Solidity. Technologies used in the app is:
+This is a Nx repo to build a full-stack dApp with Next.js and Solidity. Main repo is `next-gb` for the full-stack app and `hardhat-gb` for Ethereum development. Other repos are for testing.
+
+Technologies used in the app is:
 
 **Frontend**
 

@@ -4,7 +4,7 @@ import { GameCharacters } from '../typechain-types'
 
 const deployGameCharactersContract = async () => {
   const GameCharactersContract = await ethers.getContractFactory(
-    'GameCharacters'
+    'GameCharactersNonPayable'
   )
   const gameCharacters = await GameCharactersContract.deploy()
 
@@ -30,9 +30,7 @@ const getGameCharacterAndLevel = async (
     await gameCharactersContract.getPlayerLevel()
   )
 
-  const etherAmount = ethers.parseEther('0.05')
-
-  await gameCharactersContract.createGameCharacter({ value: etherAmount })
+  await gameCharactersContract.createGameCharacter()
   console.log(
     'Game character is: ',
     await gameCharactersContract.getGameCharacter()

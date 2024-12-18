@@ -7,11 +7,13 @@
   "license": "MIT",
   "scripts": {
     "dev:turbo": "yarn nx dev next-gb --turbo",
-    "dev:node": "yarn nx hardhat:node hardhat-gb",
+    "hardhat:node": "yarn nx hardhat:node hardhat-gb",
     "deploy-local-1": "yarn nx deploy:level hardhat-gb",
-    "deploy-local-2": "yarn nx deploy:character hardhat-gb",
+    "deploy-local-2": "yarn nx deploy:characters hardhat-gb",
+    "deploy-local-3": "yarn nx deploy:characters-nonpayable hardhat-gb",
     "deploy-testnet-1": "yarn nx deploy:level:alchemy-sepolia hardhat-gb",
-    "deploy-testnet-2": "yarn nx deploy:character:alchemy-sepolia hardhat-gb"
+    "deploy-testnet-2": "yarn nx deploy:characters:alchemy-sepolia hardhat-gb",
+    "deploy-testnet-3": "yarn nx deploy:characters-nonpayable:alchemy-sepolia hardhat-gb"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",

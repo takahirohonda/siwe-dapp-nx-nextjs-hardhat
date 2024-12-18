@@ -26,7 +26,7 @@ export const Counter = () => {
 
   console.log(`checking count ${data}`)
   console.log(`checking count data type ${typeof data}`)
-  // console.log(`checking playerLevel ${JSON.stringify(playerLevel)}`)
+
   const [level, setLevel] = useState(0)
 
   useEffect(() => {
