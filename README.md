@@ -62,6 +62,6 @@ yarn nx deploy:character:alchemy-sepolia hardhat-gb # deploy to alchemy testnet
 
 ## REREFENCE
 
-[Setting up this repo](/docs/1-setting-up-this-repo.md)
-[SIWE notes](docs/2-siwe-more-notes.md)
-[Solidity ref](docs/3-writing-solidity.md)
+- [Setting up this repo](/docs/1-setting-up-this-repo.md)
+- [SIWE notes](docs/2-siwe-more-notes.md)
+- [Solidity ref](docs/3-writing-solidity.md)
